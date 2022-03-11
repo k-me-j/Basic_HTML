@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>220311</title>
+</head>
+<body>
+    
+    <h1>텍스트 태그 적용해보기</h1>  
+    <ul>
+        <!-- 화면에 태그를 그대로 출력하고 싶은 경우 &lt; 랑 &gt; 로 감싸주면 됨 -->
+        <li> &lt;hn&gt; : 제목을 표시할 때 사용. <br>
+        단순히 시각적으로 크게 표시하려는 게 아니라, 코드상에서 이게 중요하다, 알려줌</li>
+        <li> &lt;p&gt; : 입력한 내용 앞뒤로 빈 줄이 생기면서 텍스트 단락이 만들어짐</li>
+        <li> 줄을 바꿀 위치에 &lt;br&gt; 태그를 사용. 닫는 태그가 없음 </li>
+        <li> &lt;b&gt;는 그저 굵게, &lt;strong&gt;은 강조! <br>
+            표시되는 건 같아도 엔진 읽을 때 받아들이는 게 달라. </li>
+        <li> &lt;i&gt;는 그저 기울임, &lt;em&gt;은 특정 부분 강조!
+            표시되는 건 같아도 엔진 읽을 때 받아들이는 게 달라 </li>
+    </ul>
+    
+    <h2> 레드향 예시 </h2>
+    <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+    <p>레드향은 한라봉과 귤을 교배한 것으로 <br>
+        일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+    <p>비타민 C와 비타민 P가 풍부해<br>
+        <strong>혈액순환, 감기예방</strong> 등에 좋은 것으로 알려져 있다.</p>
+
+    <br>
+    <hr>
+
+    <h1> 표 만들기 </h1>
+    <table border="1">
+        <caption>선물용과 가정용 상품 구성</caption>
+        <thead>
+            <tr>
+                <th>용도</th>
+                <th>중량</th>
+                <th>갯수</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>35,000원</td>
+            </tr>
+            <tr>
+                <td>선물용</td>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>52,000원</td>
+            </tr>
+            <tr>
+                <td rowspan="3">가정용</td>  
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>30,000원</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>47,000원</td>
+            </tr>
+            <tr>
+                <td>가정용</td>  
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>47,000원</td>
+            </tr>
+        </tbody>
+    </table>
+    마지막 행 : 행 병합하는데 그 위치의 td 삭제 안하면 옆으로 하나 더 생성됨
+    
+    <ul>
+        <li> rowspan : 행 병합 </li>
+        <li> colspan : 열 병합 </li>
+    </ul>
+
+    <br>
+    <hr>
+    
+    <h1> 경로 설정하기 </h1>
+    <ul>
+        <li> <strong>절대경로</strong> = <i>D:/kamie/download/image.png</i> 전부 다 쓰는 것 </li>
+        <li> <strong>상대경로</strong> = 주소없이 <i>./image.png</i> 이런 식으로 쓰는 것. 현재 작업 위치에서 경로 파악하는 것.</li>
+        <br>
+        <li> ./은 현재 폴더 </li>
+        <i>./img/image.png</i> == <i>img/imgae.png</i> 같음
+        <li> ../은 상위 폴더 </li>
+    </ul>
+    <img src="./img/gabriel-tovar-5h9gdcD7-eM-unsplash.jpg" width="30%" alt="밤하늘">
+    <!-- 속성 중 width만 설정해줘도 알아서 이미지 비율 맞춰서 축소,확대된대 -->
+    
+    <br>
+    <br>
+    <hr>
+
+    <h1>하이퍼링크 삽입하기</h1>
+    <h3>텍스트 링크</h3>
+    <li>속성으로 target="_blank" 값을 넣어주면 연결된 문서가 새 탭으로 열림</li>
+    <br>
+    <a href="220304.html" target="_blank"> ▶ 220304 수업 내용 돌아보기</a>
+
+    <h3>이미지 링크</h3>
+    <li>이미지를 누르면 링크로 이동 </li><br>
+    <a href="https://dacon.io/" target="_blank">
+        <img src="./img/데이콘.png" alt="데이콘">
+    </a>
+
+    <br>
+    <br>
+    <hr>
+
+    <h1>폼 삽입하기 & input 태그 </h1>
+    <ul>
+        <li>form : 서버로 정보를 보낼 수 있는 모든 요소들. 정보를 받아와야 할 때 폼 태그 사용 (로그인 폼,배송주문 폼 등)</li>
+        <li>radio : 여러 항목 중 단일 선택</li>
+        <li>checkbox : 여러 항목 중 다중 선택 </li>
+    </ul>
+    <br>
+    <h2>예약 정보</h2>
+    <form>
+        <fieldset>
+            <legend>상품 선택</legend>
+            <p><b>주문할 상품을 선택해 주세요.</b></p>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="s_3">선물용 3kg</label>
+                    <input type="number" min="1" max="5">개 (최대 5개)
+                </li>
+                <li>
+                    <label><input type="checkbox" value="s_5">선물용 5kg</label>
+                    <input type="number" min="1" max="3">개 (최대 3개)
+                </li>
+                <li>
+                    <label><input type="checkbox" value="f_3">가정용 3kg</label>
+                    <input type="number" min="1" max="5">개 (최대 5개)
+                </li>
+                <li>
+                    <label><input type="checkbox" value="f_5">가정용 3kg</label>
+                    <input type="number" min="1" max="3">개 (최대 3개)
+                </li>
+            </ul>       
+            <p><b>포장 선택</b></p>
+            <label><input type="radio" name="gift" value="yes">선물 포장</label>
+            <label><input type="radio" name="gift" value="no">선물 포장 안함</label>
+        </fieldset>
+        <fieldset>
+            <legend>배송 정보</legend>
+            <ul>
+                <li>
+                    <label for="user-name">이름</label>
+                    <input type="text" id="user-name">
+                </li>
+                <li>
+                    <label for="addr">배송 주소</label>
+                    <input type="text" id="addr">
+                </li>
+                <li>
+                    <label for="mail">이메일 주소</label>
+                    <input type="email" id="mail">
+                </li>
+                <li>
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+        
+    <br>
+    <br>
+    <br>
+    <hr>
+
+
+
+</body>
+</html>
