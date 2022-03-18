@@ -1,0 +1,38 @@
+p {
+  color: blue;
+}
+
+h3 {
+  color: grey;
+}
+
+.size-up {
+  font-size: 140%;
+  font-weight: bold;
+  color: palevioletred;
+  font-family: "굴림", 궁서체, 맑은 고딕;
+}
+
+li {
+  font-family: "본고딕", 맑은 고딕;
+}
+
+.explain {
+  padding: 10px;
+  font-size: x-large;
+  margin: 50px;
+  /* 패딩 : 컨텐츠와 보더 사이의 간격
+     마진 : 요소(태그)와 요소 사이의 간격 */
+}
+
+.container {
+  width: 600px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.code {
+  font-style: italic;
+  background-color: blue;
+  color: aliceblue;
+}
