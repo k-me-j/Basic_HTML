@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>220318_2</title>
+
+  <link rel="stylesheet" href="css/220318_2.css">
+  <style>
+    p {
+      color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CSS 외부 스타일 적용하기</h1>
+  <h3><span class="code">&lt;head&gt;</span> 안에 <span class="code">&lt;link rel="stylesheet" href="css파일 위치"&gt;</span> 넣어서 .css 적용하기</h3>
+  <p style="color: green;">스타일 적용 테스트 123 : 인라인 스타일 적용</p>
+  <p>스타일 적용 테스트 123</p>
+  <p>스타일 적용 테스트 123</p>
+  <p>스타일 적용 테스트 123</p>
+  <p>스타일 적용 테스트 123</p>
+  <p>스타일 적용 테스트 123</p>
+  <p>스타일 적용 테스트 123</p>
+
+  <br>
+  <br>
+
+  <h2>스타일 적용 순위</h2>
+
+  <ul>
+    <li>인라인 스타일이 가장 우선시 됨</li>
+    <li>외부 스타일, 내부 스타일 : 적용할 코드와 위치적으로 가까운 소스 순으로 우선 적용됨</li>
+  </ul>
+
+  <div class="explain">
+    <span class="code">&lt;head&gt;</span> 안에서 <span class="code">&lt;link&gt;</span> <span class="code">&lt;style&gt;</span> 순서에 따라 적용되는 우선순위가 달라짐<br>
+    소스순서에 따라 : 소스에서 나중에 온 스타일이 먼저 온 스타일을 덮어씀
+  </div>
+
+  <div class="container">
+    <h3>얼마나 한정지을 수 있는가에 따른 우선순위</h3>
+    <ol>
+      <li><span class="size-up">!important</span> : 어떤 스타일보다 우선 적용되는 스타일</li>
+      <li><span class="size-up">인라인 스타일</span> : 해당 태그에만 적용</li>
+      <li><span class="size-up">id 스타일</span> : 특정 부분에만 적용, 문서 안에서 한 번 만 사용됨</li>
+      <li><span class="size-up">클래스 스타일</span> : 특정 부분에만 적용, 문서 안에서 여러 번 사용됨</li>
+      <li><span class="size-up">타입 스타일</span> : 특정 태그에만 적용, 문서 안의 같은 태그에 모두 적용됨</li>
+    </ol>
+  </div>
+
+  <div class="explain" style="border: 1px solid #ccc;">
+    <ul>
+      <li>패딩 : 컨텐츠와 보더 사이의 간격</li>
+      <li>마진 : 요소(태그)와 요소 사이의 간격</li>
+    </ul>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>220318</title>
+
+  <style>
+    p {
+      text-align: center;
+      color: blue;
+    }
+    .accent {
+      border: 1px solid #000;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> &lt; input 태그 활용해보기 > </h1>
+  <form>
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label for="user-name">이름</label>
+          <input type="text" id="user-name" autofocus>
+          <!-- autofocus는 자동 커서 잡힘. 입력란 여기저기 다 넣어도 첫 번째 칸에만 커서 들어감 -->
+        </li>
+        <li>
+          <label for="addr">배송 주소</label>
+          <input type="text" id="addr" required>
+        </li>
+        <li>
+          <label for="mail">이메일</label>
+          <input type="email" id="mail" placeholder="abc@email.com">
+        </li>
+        <li>
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" placeholder="01012345678">
+        </li>
+        <li>
+          <label for="date">배송 지정</label> 
+          <input type="date" id="date"> (주문일로부터 최소 3일 이후)
+        </li>
+        <li>
+          <label for="memo">요청 사항</label> 
+          <textarea id="memo" cols="40" rows="4"></textarea>
+        </li>
+      </ul>
+    </fieldset>
+    <div>
+      <input type="submit" value="주문하기">
+      <input type="reset" value="취소하기">
+    </div>
+  </form>
+
+  <br>
+  <br>
+
+  <h2>여름방학 특강 신청</h2>
+  <form>
+    <fieldset>
+      <legend>수강 신청인</legend>
+      <ul>
+        <li>
+          <label class="reg" for="name">이름</label>
+          <input type="text" id="name" autofocus>
+        </li>
+        <li>
+          <label class="reg" for="addr">학과</label>
+            <select size="5" id="class" multiple>
+              <!-- option*5 치고 엔터치면 한 번에 5개 추가됨 -->
+              <option value="archi">건축공학과</option>
+              <option value="mechanic">기계공학과</option>
+              <option value="indust">산업공학과</option>
+              <option value="elec">전기전자공학과</option>
+              <option value="computer" selected>컴퓨터공학과</option>
+              <option value="chemical">화학공학과</option>
+            </select>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+
+  <br>
+  <br>
+  <hr>
+
+  <h1> &lt; CSS 기본 선택자 > </h1>
+  <li> 내부 스타일 적용 : head 태그 안에서 style 먹이기 </li>
+  <h2> 레드향 예시 </h2>
+  <p>껍질에 붉은 빛이 돌아 <b class="accent">레드향</b>이라 불린다.</p>
+  <p>레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+  <p>비타민 C와 비타민 P가 풍부해 <strong>혈액순환, 감기예방</strong> 등에 좋은 것으로 알려져 있다.</p>
+
+  <br>
+  <br>
+  <hr>
+
+
+</body>
+</html>
