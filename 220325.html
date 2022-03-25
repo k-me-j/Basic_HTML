@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>220325</title>
+
+  <style>
+    .heading {
+        width: 100%;
+        height: 100px;
+        background: #777;
+        color: rgb(255, 255, 255);
+        font-size: xx-large;
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .shadow1{
+      color: red;
+      text-shadow: 1px 1px black;  /* 가로, 세로 거리, 색상 지정*/
+      text-transform: capitalize;  /* 첫 번째 글자를 대문자로 */
+    }
+    
+    .shadow2{
+      text-shadow: 5px 5px 3px #ffa500;  /* 가로, 세로 거리, 번짐 정도, 색상 지정*/
+      text-transform: uppercase;  /* 전체 글자를 대문자로 */
+      letter-spacing: 0.2em;  /* 글자 간격 0.2em */
+    }
+    
+    .shadow3{
+      color: olivedrab;
+      text-shadow: 7px -7px 20px green;  /* 가로, 세로 거리, 번짐 정도,  색상 지정*/
+      letter-spacing: 0.5em;  /* 글자 간격 0.5em */
+    }
+
+    .list-style-none {
+      list-style-type: none;
+    }
+
+    .box1 {
+      width: 400px;
+      height: 200px;
+      border-color: aquamarine;
+      border-right-color: #ffa500;
+      border-style: dashed;
+      border-radius: 25%;
+      border-bottom-right-radius: 0%;
+      border-width: 10px 30px 2px 7px;  /* 시계 방향 : 위,오른쪽,아래,왼쪽 굵기 설정*/
+      margin-bottom: 20px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <h1>텍스트 스타일</h1>
+  <p class="heading">HTML</p>
+  
+  <br>
+  <hr>
+
+  <h1> text-decoration</h1>
+  <p style="text-decoration: none;">none</p>
+  <p style="text-decoration: underline;">underline</p>
+  <p style="text-decoration: overline;">overline</p>
+  <p style="text-decoration: line-through;">line-through</p>
+
+  <br>
+  <hr>
+
+  <h1>text-shadow</h1>
+  <h2 class="shadow1">shadow1</h2>
+  <h2 class="shadow2">shadow2</h2>
+  <h2 class="shadow3">shadow3</h2>
+
+  <br>
+  <hr>
+
+  <h1>목록 스타일 : list-style-type 속성</h1>
+
+  <ul>
+    <li>list</li>
+    <li>style</li>
+  </ul>
+
+  <ul class="list-style-none">
+    <li>list</li>
+    <li>style</li>
+    <li>none</li>
+  </ul>
+
+  <br>
+  <hr>
+
+  <h1>박스 테두리 스타일</h1>
+  <div class="box1"></div>
+
+  <br>
+  <hr>
+
+</body>
+</html>
