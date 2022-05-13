@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript</title>
+</head>
+<body>
+  <h1 id="heading"> CLICK here </h1>
+
+
+  <script>
+    var heading = document.querySelector('#heading');
+    heading.onclick = function() {
+      heading.style.color ="red";
+    }
+    
+    var num = prompt("3의 배수 알아보기 : 숫자 입력 ");
+    if ((num != null) && (num != 0)) {
+      if (num % 3 == 0)
+        alert("3의 배수입니다.");
+      else
+        alert("3의 배수가 아닙니다.");
+    }
+    else 
+      alert("입력이 취소되었습니다.");
+    
+    document.write(num);
+
+
+    var add1 = parseInt(prompt("첫 번째 숫자 입력"));
+    var add2 = parseInt(prompt("두 번째 숫자 입력"));
+    var sum = add1 + add2;
+
+    document.write("<h2>" + "입력한 두 숫자의 값은 " + sum + "입니다.")
+
+
+      
+    var star = prompt("별 개수 : ");
+    document.write("<h2>" + star + "개 별 찍기 ")
+    
+    for (var i=0; i<=star; i++){
+      for (var j=0; j<i; j++){
+        document.write("*")
+      }
+      document.write("<br>")
+    }
+
+    for (var i=0; i<=star; i++){
+      for (var j=star; j>i; j--){
+        document.write("*")
+      }
+      document.write("<br>")
+    }
+
+
+  </script>
+</body>
+</html>
