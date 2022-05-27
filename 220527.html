@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="img/flower.jpg" id="cover">
+
+  <br><br>
+
+  <h1>DOM 공부하기</h1>
+
+  <a href="#" onclick="addP(); this.onclick='';">더 보기1</a><br>  <!--함수로 해보기-->
+  <a href="#" id="info2">더 보기2</a>  <!--익명 함수로 해보기-->
+  <div id="info"></div>
+  <div id="info3"></div>
+
+  <br><br>
+
+  <div id="container">
+    <h1>쓰고 지우고</h1>
+    <p>기록하기 & 클릭하면 삭제 가능</p>
+    <form action="">
+      <input type="text" id="subject" autofocus>
+      <button onclick="newRegister(); return false;">추가</button>
+    </form>
+    <ul id="itemList"> </ul>  
+  </div>
+
+  <br><br>
+
+  <div id="container2">
+    <h1>할 일 목록</h1>
+    <ul>
+      <li><span class="check"></span>할 일 1</li>
+      <li><span class="check"></span>할 일 2</li>
+      <li><span class="check"></span>할 일 3</li>
+      <li><span class="check"></span>할 일 4</li>
+      <li><span class="check"></span>할 일 5</li>
+    </ul>  
+  </div>
+
+
+  <script>
+    // mouse over하면 이미지 바꾸기
+    var cover = document.getElementById("cover");
+    cover.addEventListener("mouseover", () => cover.src="img/flower1.jpg");  // 익명함수 사용
+    cover.addEventListener("mouseout", () => cover.src="img/flower.jpg");
+  
+    // 클릭하면 한 번만 실행. 눌렀을 때 생성?보여주기 되는 함수
+    function addP() {
+      var newP =document.createElement("p");
+      var txtNode = document.createTextNode("1. DOM is Document Object Model.");
+      newP.appendChild(txtNode);
+      document.getElementById("info").appendChild(newP);
+    }
+
+    // function addP() + a 를 익명함수로 생성해보기
+    document.getElementById("info2").addEventListener("click", 
+      () => {
+        // 노드 1
+        var newP =document.createElement("p");
+        var txtNode = document.createTextNode("2. DOM is Document Object Model.");
+        newP.appendChild(txtNode);
+
+        // 노드 2
+        var newImg = document.createElement("img");
+        var srcNode = document.createAttribute("src");
+        var altNode = document.createAttribute("alt");
+        srcNode.value = "img/bear.jpg";  // 값 할당
+        altNode.value = "곰돌이";  // 값 할당
+
+        // newImg Node에 attribute들 연결하기
+        newImg.setAttributeNode(srcNode);
+        newImg.setAttributeNode(altNode);
+
+        document.getElementById("info3").appendChild(newP);
+        document.getElementById("info3").appendChild(newImg)
+      }, 
+      { once : true }
+    )
+
+    // 기록하고 삭제하는 함수 생성
+    function newRegister() {
+      var newItem = document.createElement("li");
+      var subject = document.querySelector("#subject");  // 입력창 선택
+      var newText = document.createTextNode(subject.value);  // 입력창을 통해 입력 받은 값
+
+      newItem.appendChild(newText);
+      newItem.addEventListener("click", () => newItem.parentNode.removeChild(newItem));  // 클릭하면 삭제되는 기능 추가
+
+      var itemList = document.querySelector("#itemList");
+      itemList.insertBefore(newItem, itemList.childNodes[0]);  // 제일 앞에 추가하기
+
+      subject.value = "";
+    }
+
+    // 클릭하면 글자가 회색으로 변하고 가로줄이 그어지는 함수 생성
+    // document.getElementsByClassName("check").addEventListener("click", doneList);
+    var check = document.querySelectorAll(".check");
+    for (i=0; i<check.length; i++) {
+      check[i].addEventListener("click", 
+        () => {
+          this.style.color = "#ccc";
+          this.parentNode.style.textDecoration = "line-through";
+        }
+      );
+    }
+
+  </script>
+
+</body>
+</html>
